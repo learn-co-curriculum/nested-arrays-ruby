@@ -88,6 +88,93 @@ Now that we are getting comfortable getting data *out* of a nested array, let's 
 
 ### Adding Data to a Nested Array 
 
+To add data to a nested array, we can use the same `<<`, or shovel, method we use to add data to a one-dimensional array. 
+
+To add another student to our `students` array:
+
+```ruby
+students = ["Mike", "Tim", "Monique"]
+students << "Sarah"
+students 
+  => ["Mike", "Tim", "Monique", "Sarah"]
+```
+
+To add an element to an array that is nested inside of another array, we use the same bracket notation that we used above to access that nested array, *then* we can use the `<<` on it. 
+
+Let's add another piece of info, "Class President" to the nested array that describes Monique. 
+
+First, we have to access that particular array, the one that describes our student, Monique.
+
+```ruby
+nested_students[2]
+```
+Then, we can use the `<<`.
+
+```ruby
+nested_students[2] << "Class President"
+```
+
+Now, our `nested_students` array looks like this:
+
+```ruby
+nested_students = [["Mike", "Grade 10", "A average"], ["Tim", "Grade 10", "C average"], ["Monique", "Grade 11", "B average", "Class President"]]
+```
+
+## Iterating Over Nested Arrays
+
+What if we want to add data to *every array that is nested within the parent array*? It would be very tedious if we had to first calculate the length of the array and then access each individual child array using bracket notation and add to it with the `<<` method, once for each child array. 
+
+When we are dealing with a one-dimensional array and we want to do something to every element of the array, we iterate, using methods like `#each ` and `#collect`. If, for example, we wanted to `put`s out every member of the `students` array, we can do so like this:
+
+```ruby
+students.each do |student|
+  puts student
+end
+```
+
+In order to manipulate or operate on each element of a nested array, we must iterate down into that level of the array. For example, if you run the following code in IRB:
+
+```ruby
+nested_students.each do |student_array|
+  puts student_array
+end
+```
+
+You will have outputted:
+
+```ruby
+["Mike", "Grade 10", "A average"]
+["Tim", "Grade 10", "C average"]
+["Monique", "Grade 11", "B average", "Class President"]
+```
+
+So, inside the iteration above, we are accessing the list of arrays that make up the top level of the `nested_students` array. If we want to get *inside* of each child array, we continue to iterate, *inside* of the first iteration.
+
+```ruby
+nested_students.each do |student_array|
+  student_array.each do |student_detail|
+    puts student_detail
+  end
+end
+```
+
+Copy and paste the above code into IRB. You should see the following output:
+
+```ruby
+Mike
+Grade 10
+A average
+Tim
+Grade 10
+C average
+Monique
+Grade 11
+B average
+Class President
+```
+
+
+
 ## Outline
 
 1. Remind them about arrays. Arrays in ruby can contain objects of any type. Including even other arrays entirely.
