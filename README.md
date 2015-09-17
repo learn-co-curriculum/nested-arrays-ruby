@@ -25,7 +25,7 @@ A nested, or multidimensional array, is an array whose individual elements are a
 
 ## Why Use a Nested Array?
 
-Nested arrays are useufl for storing groups of similar data. One example of nested array usages comes to use from the Google Maps API. Google Maps provides a Javascript function that you, the developer, can use to add Google Maps to your own website. Don't worry about Javascript right now, just understand that a Javascript function is like a Ruby method. 
+Nested arrays are useufl for storing groups of similar data. One example of nested array usages comes to us from the Google Maps API. Google Maps provides a Javascript function that you, the developer, can use to add Google Maps to your own website. Don't worry about Javascript right now, just understand that a Javascript function is like a Ruby method. 
 
 The map-making function (or method, as we're going to think of it) was designed to take in an argument of a nested array––an array in which each index element is an array that contains a place name, latitude and longitude. In other words, something that looks like this:
 
@@ -173,23 +173,150 @@ B average
 Class President
 ```
 
+## More Nested Arrays
 
+Let's take a look at some multidimensional arrays that have an even deeper nested than the 2D arrays we've just practiced with. 
 
-## Outline
+```ruby
+very_nested_array = [["this", "is", "the", "first", "child", ["this", "is", "the", "grandchild"]], ["now", "we're", "back", "in", "the", "second", "level", ["now", "we're", "back", "in", "the", "grandchild", "level"]]]
+```
 
-1. Remind them about arrays. Arrays in ruby can contain objects of any type. Including even other arrays entirely.
-2. A simple nested structure, an array within an array. Sort of pointless, but shows structure.
-3. Demonstrate reading and writing with that simple nested array.
-4. Real world nested arrays.
-  - Example of structure, why nested is better
-  - Example of reading and writing
+In this array we have the top-level, or parent array that contains two children arrays. The array that is the first index element of this parent array contains six elements, the last of which is *yet another array*. The array that is the second index element of the parent array contains eight elements, the last of which is *yet another array*. Here, we have three levels of nesting. 
 
-5. Iterating of nested arrays
-  - use real array examples and show how you'd iterate to deconstruct them.
-  - read / write data into the inner arrays
-  - iterate over the inner arrays themselves with a nested loop.
+### When to Use a 3D Array
 
-6. Complext nested arrays, 3-4 deep.
-  - structure, reasoning
-  - reading/writing/iteration (quick examples)
-  - danger / not good to go past 3
+Multidimensional arrays, like the deeply nested one above, are useful for storing hierarchical data. Any collection of information that you can picture like a tree could be a good candidate for a nested array. 
+
+Let's take, for example, a music library. You have artists, which each have albums, which in turn have songs. You could picture a structure like this:
+
+![](http://readme-pics.s3.amazonaws.com/Screen%20Shot%202015-09-17%20at%2011.55.01%20AM.png)
+
+And so on, for the various artists in the library. This data structure is considered hierarchical. We could represent it in a nested array that looks something like this:
+
+```ruby
+music_library = [["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]], ["Beyonce", ["4", ["1 + 1", "Countdown"]], ["Beyonce", ["Haunted", "Pretty Hurts"]]]]
+```
+
+When we are working with 3D arrays, it can be difficult to read through the data structure in a way that makes sense. A useful tactic can be formatting the array such that each level of nested is placed on it's own line. This can make things much easier to read:
+
+```ruby
+music_library = [
+	["Adele", 
+		["19", 
+			["Day Dreamer", "Best For Last"]
+		], 
+		["21", 
+			["Rollin' In The Deep", "Rumor Has It"]
+		]
+	], 
+	["Beyonce", 
+		["4", 
+			["1 + 1", "Countdown"]
+		], 
+		["Beyonce", 
+			["Haunted", "Pretty Hurts"]
+		]
+	]
+]
+```
+Let's try iterating over our `music_library` array. 
+
+```ruby
+very_nested_array.each do |arist_array|
+    arist_array.each do |artist_element|
+    	# we are inside the first level of the array
+    	# artist_element = ["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]]
+      
+      if artist_element.class != Array
+        puts "Artist: #{artist_element}"
+      else
+        artist_element.each do |album_element|
+        	# we are inside the second level of the array,
+        	# album_element = ["19", ["Day Dreamer", "Best For Last"]]
+          if album_element.class != Array
+            puts "Album: #{album_element}"
+          else
+            album_element.each do |song_element|
+            	# we are inside the third level of the array
+            	# song_element = "Day Dreamer"
+              puts "Song: #{song_element}"
+            end
+          end
+        end
+      end
+    end
+  end
+end
+```
+We begin by iterating over the first child array, the array that contains all of the information about a particular artist:
+
+```ruby
+very_nested_array.each do |artist_array|
+    artist_array.each do |artist_element|
+    ...
+end
+```
+
+At this level, we are accessing the two child arrays that make up the first tier of the `very_nested_array`. On the first step of, or time through, the iteration, `artist_element` is equal to `["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]]`. 
+
+We have so checks to put in place if we want to keep iteration. *Some* of the elements of the `artist_element` array are *other arrays*. These need to be iterated over so that we can access what is inside (i.e. information about the albums and songs). But! *Some* of the elements are just strings. *We can't iterate over a string* (you might be thinking). Well, you're absolutely right. Since we can't iterate over a string...we won't! Instead, we'll use `if`/`else` statements to check to see if an element is an array. If it is, we'll iterate over it, if it isn't, we'll simply `put`s it out to the terminal. 
+
+```ruby
+very_nested_array.each do |artist_array|
+	artist_array.each do |artist_element|
+		if artist_element.class != Array # check to see if the element is not an array
+			puts "Artist: #{artist_element}"
+		else    # i.e., if the element is an array
+			artist_element.each do |album_element|
+				# Second level of the iteration
+			end
+	end
+end
+```
+
+At the second level of our iteration (where we left off with our `Second level of the iteration` note above), we are operating on the arrays nested *inside* the arrays that describe each artist. On the first step, or time through, the iteration, `album_element` is equal to `["19", ["Day Dreamer", "Best For Last"]]`. 
+
+Once again, some of the members of this array are other arrays, some are strings. So, we need to re-use our `if`/`else` logic to determine whether or not we should iterate. 
+
+```ruby
+...
+artist_element.each do |album_element|
+	if album_element.class != Array
+		puts "Album: #{album_element}"
+	else
+		album_element.each do |song_element|
+			# Last level of the iteration
+	end
+end
+...
+```
+Once we are iterating over the `album_element`s that are arrays, we are at the bottom of our `very_nested_array`. There are no more arrays to identify and iterate over. So, all we need to do inside that iteration is `put`s out reach `song_element`. 
+
+Let's take a look at the whole thing again:
+
+```ruby
+very_nested_array.each do |arist_array|
+    arist_array.each do |artist_element|
+      if artist_element.class != Array
+        puts "Artist: #{artist_element}"
+      else
+        artist_element.each do |album_element|
+          if album_element.class != Array
+            puts "Album: #{album_element}"
+          else
+            album_element.each do |song_element|
+              puts "Song: #{song_element}"
+            end
+          end
+        end
+      end
+    end
+  end
+end
+```
+
+Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text editor and writing a method that contains the above code. Require Pry at the top of your file, then place a `binding.pry` at each level of the iteration. Run the file again and again and play around in pry until you feel more comfortable with what is occurring at each step and level of the iteration. 
+
+### When Not to Use a 3D Array
+
+Three levels deep is about at deep as you want to go when constructions multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead. 
