@@ -337,7 +337,7 @@ music_library.each do |arist_array|
 end
 ```
 
-Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text editor and writing a method that contains the above code. Require Pry at the top of your file, then place a `binding.pry` at each level of the iteration. Run the file again and again and play around in pry until you feel more comfortable with what is occurring at each step and level of the iteration.
+Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text editor and writing a method that contains the above code.
 
 ### When Not to Use a 3D Array
 
