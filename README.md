@@ -279,7 +279,7 @@ end
 
 At this level, we are accessing the two child arrays that make up the first tier of the `music_library`. On the first step of, or time through, the iteration, `artist_element` is equal to `["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]]`.
 
-We have to checks to put in place if we want to keep iteration. *Some* of the elements of the `artist_element` array are *other arrays*. These need to be iterated over so that we can access what is inside (i.e. information about the albums and songs). But! *Some* of the elements are just strings. *We can't iterate over a string* (you might be thinking). Well, you're absolutely right. Since we can't iterate over a string...we won't! Instead, we'll use `if`/`else` statements to check to see if an element is an array. If it is, we'll iterate over it, if it isn't, we'll simply `put`s it out to the terminal.
+We have two checks to put in place if we want to keep iteration. *Some* of the elements of the `artist_element` array are *other arrays*. These need to be iterated over so that we can access what is inside (i.e. information about the albums and songs). But! *Some* of the elements are just strings. *We can't iterate over a string* (you might be thinking). Well, you're absolutely right. Since we can't iterate over a string...we won't! Instead, we'll use `if`/`else` statements to check to see if an element is an array. If it is, we'll iterate over it, if it isn't, we'll simply `put`s it out to the terminal.
 
 ```ruby
 music_library.each do |artist_array|
