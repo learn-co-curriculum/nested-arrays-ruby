@@ -341,4 +341,4 @@ Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text e
 
 ### When Not to Use a 3D Array
 
-Three levels deep is about at deep as you want to go when constructions multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
+Three levels deep is about at deep as you want to go when constructing multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
