@@ -313,7 +313,7 @@ end
 # ...
 ```
 
-Once we are iterating over the `album_element`s that are arrays, we are at the bottom of our `music_library`. There are no more arrays to identify and iterate over. So, all we need to do inside that iteration is `put`s out reach `song_element`.
+Once we are iterating over the `album_element`s that are arrays, we are at the bottom of our `music_library`. There are no more arrays to identify and iterate over. So, all we need to do inside that iteration is `put`s out each `song_element`.
 
 Let's take a look at the whole thing again:
 
