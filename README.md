@@ -241,8 +241,8 @@ music_library = [
 Let's try iterating over our `music_library` array.
 
 ```ruby
-music_library.each do |arist_array|
-  arist_array.each do |artist_element|
+music_library.each do |artist_array|
+  artist_array.each do |artist_element|
     # we are inside the first level of the array
     # artist_element = ["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]]
 
@@ -318,8 +318,8 @@ Once we are iterating over the `album_element`s that are arrays, we are at the b
 Let's take a look at the whole thing again:
 
 ```ruby
-music_library.each do |arist_array|
-  arist_array.each do |artist_element|
+music_library.each do |artist_array|
+  artist_array.each do |artist_element|
     if artist_element.class != Array
       puts "Artist: #{artist_element}"
     else
