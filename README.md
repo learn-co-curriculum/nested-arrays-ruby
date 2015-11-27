@@ -215,7 +215,7 @@ And so on, for the various artists in the library. This data structure is consid
 music_library = [["Adele", ["19", ["Day Dreamer", "Best For Last"]], ["21", ["Rollin' In The Deep", "Rumor Has It"]]], ["Beyonce", ["4", ["1 + 1", "Countdown"]], ["Beyonce", ["Haunted", "Pretty Hurts"]]]]
 ```
 
-When we are working with 3D arrays, it can be difficult to read through the data structure in a way that makes sense. A useful tactic can be formatting the array such that each level of nested is placed on it's own line. This can make things much easier to read:
+When we are working with 3D arrays, it can be difficult to read through the data structure in a way that makes sense. A useful tactic can be formatting the array such that each level of nested is placed on its own line. This can make things much easier to read:
 
 ```ruby
 music_library = [
