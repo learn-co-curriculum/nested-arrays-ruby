@@ -142,7 +142,7 @@ What if we want to add data to *every array that is nested within the parent arr
 When we are dealing with a one-dimensional array and we want to do something to every element of the array, we iterate, using methods like `#each ` and `#collect`. If, for example, we wanted to `put`s out every member of the `students` array, we can do so like this:
 
 ```ruby
-students.each do |student|
+nested_students.each do |student|
   puts student
 end
 ```
