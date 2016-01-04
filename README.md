@@ -139,7 +139,7 @@ nested_students = [
 
 What if we want to add data to *every array that is nested within the parent array*? It would be very tedious if we had to first calculate the length of the array and then access each individual child array using bracket notation and add to it with the `<<` method, once for each child array.
 
-When we are dealing with a one-dimensional array and we want to do something to every element of the array, we iterate, using methods like `#each ` and `#collect`. If, for example, we wanted to `put`s out every member of the `students` array, we can do so like this:
+When we are dealing with a one-dimensional array and we want to do something to every element of the array, we iterate, using methods like `#each ` and `#collect`. If, for example, we wanted to `puts` out every member of the `students` array, we can do so like this:
 
 ```ruby
 students.each do |student|
