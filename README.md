@@ -142,7 +142,7 @@ What if we want to add data to *every array that is nested within the parent arr
 When we are dealing with a one-dimensional array and we want to do something to every element of the array, we iterate, using methods like `#each ` and `#collect`. If, for example, we wanted to `puts` out every member of the `students` array, we can do so like this:
 
 ```ruby
-nested_students.each do |student|
+students.each do |student|
   puts student
 end
 ```
@@ -343,4 +343,6 @@ Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text e
 
 Three levels deep is about as deep as you want to go when constructing multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby' title='Multidimensional Arrays'>Multidimensional Arrays</a> on Learn.co and start learning to code for free.</p>
+<a href='https://learn.co/lessons/nested-arrays-ruby' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby'>Nested Arrays</a> on Learn.co and start learning to code for free.</p>
