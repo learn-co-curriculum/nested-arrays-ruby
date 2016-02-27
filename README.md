@@ -151,7 +151,8 @@ In order to manipulate or operate on each element of a nested array, we must ite
 
 ```ruby
 nested_students.each do |student_array|
-  puts student_array
+  print student_array
+	puts ""
 end
 ```
 
@@ -343,4 +344,6 @@ Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text e
 
 Three levels deep is about as deep as you want to go when constructing multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby' title='Multidimensional Arrays'>Multidimensional Arrays</a> on Learn.co and start learning to code for free.</p>
+<a href='https://learn.co/lessons/nested-arrays-ruby' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby'>Nested Arrays</a> on Learn.co and start learning to code for free.</p>
