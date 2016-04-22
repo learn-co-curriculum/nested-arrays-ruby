@@ -184,7 +184,7 @@ every element of the array, we iterate, using methods like `#each ` and
 `students` array, we can do so like this:
 
 ```ruby
-nested_students.each do |student|
+students.each do |student|
   puts student
 end
 ```
