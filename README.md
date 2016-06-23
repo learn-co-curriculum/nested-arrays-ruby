@@ -238,7 +238,7 @@ Class President
 
 ## More Nested Arrays
 
-Let's take a look at some multidimensional arrays that have an even deeper
+Let's take a look at some multidimensional arrays that are even deeper
 nested than the 2D arrays we've just practiced with.
 
 ```ruby
