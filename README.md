@@ -141,8 +141,8 @@ students << "Sarah"
 students #=> ["Mike", "Tim", "Monique", "Sarah"]
 ```
 
-To add an element to an array that is nested inside of another array, we use th
-e same bracket notation that we used above to access that nested array, *then*
+To add an element to an array that is nested inside of another array, we use the 
+same bracket notation that we used above to access that nested array, *then*
 we can use the `<<` on it.
 
 Let's add another piece of info, "Class President" to the nested array that
@@ -393,3 +393,5 @@ Iterating over 3D arrays is tough. Try opening up a new Ruby file in your text e
 Three levels deep is about as deep as you want to go when constructing multidimensional arrays. As you can see, things can get messy, fast. If you have more hierarchical data than can fit in a 3D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby' title='Multidimensional Arrays'>Multidimensional Arrays</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/nested-arrays-ruby'>Nested Arrays</a> on Learn.co and start learning to code for free.</p>
