@@ -41,12 +41,12 @@ location_array =  [
   ["Disney World", 28.385233, -81.563874]
 ]
 ```
-
+(The following formatting doesn't work on Chrome.  The "Reading and Writing ..." and "Accessing Data from ..." look the same, with about 6 blank lines in between.)
 ## Reading and Writing with Nested Arrays
 
 ### Accessing Data from a Nested Array
 
-To access data from and add data to (i.e., "read and write") with a nested array, we use the same methods we've been using to deal with one-dimensional arrays.
+To access data from and add data to (i.e., "read and write") a nested array, we use the same methods we've been using to deal with one-dimensional arrays.
 
 Let's stick with our `students` and `nested_students` arrays for now. To grab an element out of the `students` array, we use bracket notation plus the index number of the element we want.
 
@@ -369,3 +369,5 @@ Iterating over multidimensional arrays is tough. Try opening up a new Ruby file 
 Four levels deep is about as deep as you want to go when constructing multidimensional arrays. As you can see, things can quickly get messy. If you have more hierarchical data than can fit in a 4D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby' title='Multidimensional Arrays'>Multidimensional Arrays</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/nested-arrays-ruby'>Nested Arrays</a> on Learn.co and start learning to code for free.</p>
