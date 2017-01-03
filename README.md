@@ -175,6 +175,7 @@ You will have outputted:
 ["Tim", "Grade 10", "C average"]
 ["Monique", "Grade 11", "B average", "Class President"]
 ```
+ => [["Mike", "Grade 10", "A average"], ["Tim", "Grade 10", "C average"], ["Monique", "Grade 11", "B average", "Class President"]]   
 
 In the example above, we are iterating through the list of arrays that make up the top level of the `nested_students` array. If we want to iterate through the elements *inside* each child array, we add a second layer of iteration *inside* the first:
 
@@ -369,3 +370,5 @@ Iterating over multidimensional arrays is tough. Try opening up a new Ruby file 
 Four levels deep is about as deep as you want to go when constructing multidimensional arrays. As you can see, things can quickly get messy. If you have more hierarchical data than can fit in a 4D array, it might be better to try using a dictionary-like data structure, called a hash, instead.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/nested-arrays-ruby' title='Multidimensional Arrays'>Multidimensional Arrays</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/nested-arrays-ruby'>Nested Arrays</a> on Learn.co and start learning to code for free.</p>
