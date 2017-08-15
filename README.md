@@ -11,7 +11,7 @@
 
 An array is like a list but in code form. It is a way for your program to store pieces of data as a collection. Arrays can contain any combination of Ruby data types -- booleans, integers, strings, or even other collections in the form of nested arrays and hashes.
 
-Arrays are declared by listing variable names or literals separated by commas and are wrapped in square brackets. For example:
+Arrays are declared by listing variable names or literals, separated by commas and wrapped in square brackets. For example:
 
 ```ruby
 students = ["Mike", "Tim", "Monique"]
