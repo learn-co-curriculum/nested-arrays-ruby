@@ -41,7 +41,7 @@ location_array =  [
   ["Disney World", 28.385233, -81.563874]
 ]
 ```
-
+(The following formatting doesn't work on Chrome.  The "Reading and Writing ..." and "Accessing Data from ..." look the same, with about 6 blank lines in between.)
 ## Reading and Writing with Nested Arrays
 
 ### Accessing Data from a Nested Array
