@@ -152,8 +152,7 @@ students.each do |student|
 end
 ```
 
-In order to manipulate or operate on each element of a nested array, we must first dig down into that level of the array. For example, if you run the following code in IRB:
-
+In order to manipulate or operate on each element of a nested array, we must first dig down into that level of the array. For example, run the following code in IRB:
 ```ruby
 nested_students = [
   ["Mike", "Grade 10", "A average"],
@@ -168,16 +167,15 @@ nested_students.each do |student_array|
 end
 ```
 
-You will have outputted:
-
+The `.each` method prints out each nested array separately and then returns the original array:
 ```ruby
 ["Mike", "Grade 10", "A average"]
 ["Tim", "Grade 10", "C average"]
 ["Monique", "Grade 11", "B average", "Class President"]
-```
+#  => [["Mike", "Grade 10", "A average"], ["Tim", "Grade 10", "C average"], ["Monique", "Grade 11", "B average", "Class President"]]
+```  
 
 In the example above, we are iterating through the list of arrays that make up the top level of the `nested_students` array. If we want to iterate through the elements *inside* each child array, we add a second layer of iteration *inside* the first:
-
 ```ruby
 nested_students = [
   ["Mike", "Grade 10", "A average"],
